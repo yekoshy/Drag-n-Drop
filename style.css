@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding-bottom: 20px;
+}
+
+h1 {
+    text-align: left;
+    padding: 20px;
+    margin-bottom: 0;
+}
+
+.header-bar {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+.content-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+    padding: 20px;
+    gap: 20px;
+}
+
+.section-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* --- Draggable Items Area --- */
+#items-to-drag {
+    border: 1px solid white; /* Invisible border to maintain grid structure */
+}
+
+.draggable-item {
+    background-color: white;
+    border: 1px solid #333;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    cursor: grab; /* Indicates it's draggable */
+    transition: opacity 0.2s;
+}
+
+.draggable-item:hover {
+    background-color: #f9f9f9;
+}
+
+/* Class added when dragging starts */
+.dragging {
+    opacity: 0.4;
+    border-style: dashed;
+}
+
+/* --- Drop Zone Area --- */
+#drop-zone {
+    border: 2px dashed #999;
+    min-height: 100px; /* Gives it height to be a target */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* Style for when an element is dragged over the drop zone */
+.drag-over {
+    background-color: #e0f7fa;
+    border-color: #00bcd4;
+}
+
+/* Style for the dropped item inside the drop zone */
+#drop-zone .draggable-item {
+    cursor: default; /* No longer grabbable once dropped */
+    margin: 5px 0;
+    width: 90%;
+}
+
+/* --- Dropped Items List Area --- */
+#dropped-items-list {
+    border: 1px solid #ccc;
+    padding: 10px;
+    min-height: 150px; /* Matches the visual appearance */
+}
